@@ -13,6 +13,14 @@
     --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
 }
 
+[data-theme="light"] {
+    --dark: #ffffff;
+    --dark-light: #f8fafc;
+    --light: #0f172a;
+    --gray: #475569;
+    --white: #0f172a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +37,7 @@ body {
     color: var(--light);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -108,6 +117,27 @@ body {
     height: 3px;
     background: var(--light);
     transition: 0.3s;
+}
+
+.theme-toggle {
+    background: var(--dark-light);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--gradient);
+    transform: rotate(180deg);
 }
 
 /* Hero Section */
@@ -744,6 +774,10 @@ section {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    .theme-toggle {
+        margin-left: 0;
     }
 
     .nav-menu {
